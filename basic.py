@@ -10,10 +10,12 @@ FPS = 100
 
 # 绘制单个格子
 def draw_cell_by_cr(canvas,column,roll,color="#CCCCCC",tag_kind=""):
+    
     x0 = column*cell_size
     y0 = roll*cell_size
     x1 = (column+1)*cell_size
     y1 = (roll+1)*cell_size
+    # 给每一个格子打tag 分为falling(下降) 落地的格子(row) 其他空白格子
     if tag_kind=="falling":
         canvas.create_rectangle(x0,y0,x1,y1,fill = color,outline="white",width=2,tag=tag_kind)
     elif tag_kind=="row":
